@@ -7,15 +7,15 @@ def modelo(t, Y):
     # parametros
 
     rho = 0.41
-    cd = 0.2
+    cd = 0.18
     A = 0.008
     ve = 1342
-    mdd = 0.5
+    mdd = 0.6
     mdot1 = mdd
     mdot2 = mdd
     ml = 5
-    ms1 = 4
-    ms2 = 4
+    ms1 = 4.3
+    ms2 = 0.8
 
     # variables
 
@@ -28,7 +28,7 @@ def modelo(t, Y):
 
     dhdt = v
     dmpdt = -mdot1
-    if mp<6:
+    if mp<4.9:
         dmpdt = -mdot2
         m = mp + ms2 + ml
     if mp <= 0.0:
@@ -39,7 +39,7 @@ def modelo(t, Y):
 
 # condiciones iniciales
 
-y0 = [0, 0.0, 12]
+y0 = [0, 0.0, 8]
 
 # intervalo de tiempo
 ti = 0
